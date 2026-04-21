@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace Hernandez_Edwardo
         {
             InitializeComponent();
         }
+        MyDatabase db = new MyDatabase();
         string[,] userCredentials =
    {
         {"admin", "admin","edwardo hernandez" },
@@ -24,8 +26,17 @@ namespace Hernandez_Edwardo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            MyDatabase db = new MyDatabase();
+            if (db.TestConnection() == true)
+            {
+                MessageBox.Show("Connected to Databasae");
+            }
+            else
+            {
+                MessageBox.Show("Database Connection Failed");
+            }
         }
+            
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -42,28 +53,28 @@ namespace Hernandez_Edwardo
                 }
                 else
                 {
-                    for (int x = 0; x < userCredentials.GetLength(0); x++)
-                    {
-                        if (tbUsername.Text == userCredentials[x, 0])
-                        {
-                            if (tbPassword.Text == userCredentials[x, 1])
-                            {
-                                frmHome frm = new frmHome();
-                                MessageBox.Show("Welcome " + userCredentials[x, 2]);
-                                this.Hide();
-                                frm.Show();
-                                break;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Invalid Username/Password");
-                                break;
-                            }
-                        }
 
+                    DataTable dt = db.ExecuteReturnQuery("SELECT * from tbllogincredentials WHERE user_username = @uname and user_password = @pword",
+                    new MySqlParameter("@uname", tbUsername.Text),
+                    new MySqlParameter("@pword", tbPassword.Text));
+
+                    if (dt.Rows.Count == 1)
+                    {
+                        frmHome frm = new frmHome();
+                        this.Hide();
+                        frm.Show();
                     }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password");
+                    } 
+                   
+                    
+
                 }
             }
         }
     }
 }
+
+          
