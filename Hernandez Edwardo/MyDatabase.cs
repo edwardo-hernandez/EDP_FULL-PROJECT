@@ -7,15 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hernandez_Edwardo
+namespace EDPBSIT2D
 {
     internal class MyDatabase
     {
-        string connectionString = "Server=localhost;Port=3306;Database='hernandez_db';Uid='root';Pwd=''";
+        string connectionString = "Server=localhost;Port=3306;Database='hernandez_db';Uid='root';Pwd='';Allow User Variables=True;AllowBatch=True";
+
 
         public bool TestConnection()
-
-
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -35,7 +34,7 @@ namespace Hernandez_Edwardo
             }
         }
 
-        //execute no return query method. used for queries; INSERT, UPDATE, DELETE
+        //execute no return query method. used for queries: INSERT, UPDATE, DELETE
 
         public int ExecuteNoReturnQuery(string query, params MySqlParameter[] parameters)
         {
@@ -103,7 +102,7 @@ namespace Hernandez_Edwardo
                 return dataTable;
             }
         }
+
+
     }
 }
-
-

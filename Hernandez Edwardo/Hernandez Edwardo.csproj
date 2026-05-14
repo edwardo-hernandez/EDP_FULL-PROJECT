@@ -56,18 +56,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyDatabase.cs" />
     <Compile Include="timeform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="timeform.Designer.cs">
       <DependentUpon>timeform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="userform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="userform.Designer.cs">
-      <DependentUpon>userform.cs</DependentUpon>
     </Compile>
     <Compile Include="vendorform.cs">
       <SubType>Form</SubType>
@@ -107,6 +107,9 @@
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="priceform.resx">
       <DependentUpon>priceform.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +121,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="regform.resx">
       <DependentUpon>regform.cs</DependentUpon>
@@ -127,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="timeform.resx">
       <DependentUpon>timeform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="userform.resx">
-      <DependentUpon>userform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vendorform.resx">
       <DependentUpon>vendorform.cs</DependentUpon>
@@ -146,6 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1000059339.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

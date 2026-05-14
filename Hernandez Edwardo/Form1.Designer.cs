@@ -39,9 +39,10 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(555, 309);
+            this.button1.Location = new System.Drawing.Point(493, 247);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 47);
+            this.button1.Size = new System.Drawing.Size(123, 38);
             this.button1.TabIndex = 0;
             this.button1.Text = "Log In";
             this.button1.UseVisualStyleBackColor = false;
@@ -49,46 +50,53 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(362, 235);
+            this.tbPassword.Location = new System.Drawing.Point(322, 188);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(276, 26);
+            this.tbPassword.Size = new System.Drawing.Size(246, 22);
             this.tbPassword.TabIndex = 1;
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(362, 172);
+            this.tbUsername.Location = new System.Drawing.Point(322, 138);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(276, 26);
+            this.tbUsername.Size = new System.Drawing.Size(246, 22);
             this.tbUsername.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(207, 172);
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(184, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(207, 235);
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(184, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BackgroundImage = global::Hernandez_Edwardo.Properties.Resources._1000059339;
+            this.ClientSize = new System.Drawing.Size(778, 430);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

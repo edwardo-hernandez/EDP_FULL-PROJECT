@@ -51,8 +51,9 @@ namespace Hernandez_Edwardo
 
         private void button5_Click(object sender, EventArgs e)
         {
-               userform uform = new userform();
-            uform.Show();
+            frmUsers frm = new frmUsers();
+            this.Hide();
+            frm.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
