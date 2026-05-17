@@ -55,7 +55,7 @@ namespace Hernandez_Edwardo
                 else
                 {
 
-                    DataTable dt = db.ExecuteReturnQuery("SELECT * from tbllogincredentials WHERE user_username = @uname and user_password = @pword",
+                    DataTable dt = db.ExecuteReturnQuery("SELECT * from tbllogincredentials WHERE user_username = @uname and user_password = @pword and is_active = 1;",
                     new MySqlParameter("@uname", tbUsername.Text),
                     new MySqlParameter("@pword", tbPassword.Text));
 

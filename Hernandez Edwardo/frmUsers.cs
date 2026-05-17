@@ -24,7 +24,6 @@ namespace Hernandez_Edwardo
 
         private void frmUsers_Load(object sender, EventArgs e)
         {
-            isUpdate = false;
             string query = "SELECT tbluserinformation.userID, tbllogincredentials.LoginID, tbluserinformation.firstname, " +
                 "tbluserinformation.middlename, tbluserinformation.lastname, tbluserinformation.emailAddress," +
                 " tbluserinformation.homeAddress, tbluserinformation.birthDate, tbllogincredentials.user_username as 'Username'," +
@@ -35,7 +34,6 @@ namespace Hernandez_Edwardo
             dgvUsers.DataSource = db.ExecuteReturnQuery(query);
             dgvUsers.Columns[0].Visible = false;
             dgvUsers.Columns[1].Visible = false;
-
 
 
         }
@@ -65,9 +63,9 @@ namespace Hernandez_Edwardo
             if (isUpdate == false)
             {
                 string query = "INSERT INTO tbluserinformation (firstname, middlename, lastname, emailAddress, homeAddress, birthDate)" +
-                " VALUES (@fname, @mname, @lname, @email, @hadd, @bDate);" +
-                "SET @newUserID = LAST_INSERT_ID();" +
-                "INSERT INTO tbllogincredentials (userID, user_username, user_password) VALUES (@newUserID, @username, @password);";
+                 " VALUES (@fname, @mname, @lname, @email, @hadd, @bDate);" +
+                 "SET @newUserID = LAST_INSERT_ID();" +
+                 "INSERT INTO tbllogincredentials (userID, user_username, user_password) VALUES (@newUserID, @username, @password);";
 
                 int affectedRowCount = db.ExecuteNoReturnQuery(query,
                     new MySqlParameter("@fname", tbFname.Text),
@@ -85,19 +83,14 @@ namespace Hernandez_Edwardo
                     MessageBox.Show("Data Inserted!");
                     frmUsers_Load(null, null);
                 }
-            }
-            else if (isUpdate == true)
-            {
-                //update process
 
 
-                isUpdate = false;
             }
         }
 
         private void btnDeactivate_Click_1(object sender, EventArgs e)
         {
-            if (dgvUsers.SelectedRows.Count > 0)
+           if (dgvUsers.SelectedRows.Count > 0)
             {
 
                 DialogResult result = MessageBox.Show("Are you sure you want to deactivate this account?", "Account Deactivation", MessageBoxButtons.YesNo);
@@ -116,6 +109,7 @@ namespace Hernandez_Edwardo
 
                 }
             }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
