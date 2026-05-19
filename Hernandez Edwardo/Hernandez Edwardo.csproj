@@ -151,5 +151,8 @@
   <ItemGroup>
     <None Include="Resources\1000059339.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="databaseedward\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
